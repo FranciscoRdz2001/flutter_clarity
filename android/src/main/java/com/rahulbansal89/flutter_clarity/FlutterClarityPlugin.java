@@ -43,15 +43,30 @@ public class FlutterClarityPlugin implements FlutterPlugin, MethodCallHandler {
         Boolean enableWebViewCapture = call.argument("enableWebViewCapture");
         List<String> allowedDomains = call.argument("allowedDomains");
         ClarityConfig config = new ClarityConfig(
-            projectId,
-            userId,
-            LogLevel.valueOf(logLevel),
-            allowMeteredNetworkUsage,
-            enableWebViewCapture,
-            allowedDomains,
-            ApplicationFramework.Native
+                projectId,
+                userId, // Default user id
+                LogLevel.valueOf(logLevel),
+                allowMeteredNetworkUsage, // Disallow metered network usage
+                enableWebViewCapture, // Enable web view capturing
+               allowedDomains, // Allowed domains
+                ApplicationFramework.Native,
+                Collections.<String> emptyList(), // Allowed activities
+                Collections.<String> emptyList(), // Disallowed activities (ignore activities)
+                false,
+                null// Disable on low-end devices
         );
+
         Clarity.initialize(context, config);
+                ;//        ClarityConfig config = new ClarityConfig(
+//            projectId,
+//            userId,
+//            LogLevel.valueOf(logLevel),
+//            allowMeteredNetworkUsage,
+//            enableWebViewCapture,
+//            allowedDomains,
+//            ApplicationFramework.Native
+//        );
+//        Clarity.initialize(context, config);
         result.success(null);
         break;
       case "setCustomUserId":

@@ -8,7 +8,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.2.0'
+        classpath 'com.android.tools.build:gradle:7.4.2'
     }
 }
 
@@ -34,6 +34,6 @@ android {
     }
 
     dependencies {
-        implementation "com.microsoft.clarity:clarity:1.2.3"
+        implementation 'com.microsoft.clarity:clarity:2.2.0'
     }
 }
