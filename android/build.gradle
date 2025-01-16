@@ -23,7 +23,7 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 31
-    namespace flutter_clarity
+    namespace "flutter_clarity"
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
